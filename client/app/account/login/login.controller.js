@@ -20,7 +20,10 @@ class LoginController {
         })
         .then(() => {
           // Logged in, redirect to home
-          this.$state.go('main');
+          if(this.Auth.getCurrentUser().department == "finance")
+          this.$state.go('financePortal');
+          else
+           this.$state.go('eventsPortal'); 
         })
         .catch(err => {
           this.errors.other = err.message;

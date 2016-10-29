@@ -3,7 +3,7 @@
    <button class="btn btn-primary btn-lg" ng-click="undoChanges()">Undo Changes</button><br><br>
     <ul class="list-group">
       <li ng-repeat="user in user_list" class="list-group-item list-group-item portal_panel">
-      <span class="badge"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></span>
+      <span class="badge"><a class="glyphicon glyphicon-file" aria-hidden="true"></a></span>
        <p>
          {{user.name}}
          <span ng-show="user.status_check" class="label label-success status_pos">{{user.accomodation_status}}</span>

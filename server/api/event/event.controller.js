@@ -68,7 +68,7 @@ export function index(req, res) {
 
 // Gets a single Event from the DB
 export function show(req, res) {
-  return Event.findById(req.params.id).exec()
+  return Event.find({name:req.params.eventName}).exec()
     .then(handleEntityNotFound(res))
     .then(respondWithResult(res))
     .catch(handleError(res));

@@ -7,9 +7,32 @@ class SignupController {
   submitted = false;
   //end-non-standard
 
-  constructor(Auth, $state) {
+  constructor(Auth, $state,$scope) {
     this.Auth = Auth;
     this.$state = $state;
+
+    $scope.signupOptions = [
+          'Chem E Debate',
+          'Censino',
+          'Paper & Poster presentation',
+          'Cheminnovate',
+          'Project X',
+          'Disaster scene investigation',
+          'Chemical Entrepreneurship',
+          'Aqua Rocket',
+          'Chemical X',
+          'Open quiz',
+          'Puzzle champ',
+          'Chemieconnexion',
+          'CheQ',
+          'Chem E Dart',
+          'ChemAdmad',
+          'Treasure hunt',
+          'Aspen Plus + Simulation Competition',
+          'R programming + Competition',
+          'Comsol workshop',
+          'Art of Research Writing',
+          'Forensics Workshop'];
   }
 
   register(form) {
@@ -24,7 +47,10 @@ class SignupController {
         })
         .then(() => {
           // Account created, redirect to home
-          this.$state.go('main');
+          if(this.Auth.getCurrentUser().department == "Finance")
+          this.$state.go('financePortal');
+          else
+           this.$state.go('eventsPortal'); 
         })
         .catch(err => {
           err = err.data;
