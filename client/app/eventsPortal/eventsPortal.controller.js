@@ -3,8 +3,11 @@
 (function(){
 
 class EventsPortalComponent {
-  constructor() {
-    this.message = 'Hello';
+  constructor($scope,$http,Auth) {
+      $http.get("/api/events/"+Auth.getCurrentUser().department).success(function(){
+         $scope.event = response;
+      });
+    
   }
 }
 
