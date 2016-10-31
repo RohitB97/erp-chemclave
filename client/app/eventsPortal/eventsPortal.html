@@ -1,4 +1,8 @@
- <div class="container"> 
+<div ng-show="!event_added" class="container">
+  <button ng-click="event_launch()" class="btn btn-primary">Launch {{launching_event}}</button>
+</div>  
+
+ <div ng-show="event_added" class="container"> 
     <button data-toggle='modal' data-target='#event_info' type="button" class="btn btn-primary btn-lg">Event_Info</button>&nbsp;&nbsp;
     <button data-toggle='modal' data-target='#ps' type="button" class="btn btn-danger btn-lg">Problem Statement</button><br><br><br>
 

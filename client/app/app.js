@@ -5,7 +5,7 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
     'ui.router', 'ui.bootstrap', 'validation.match'
   ])
   .config(function($urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
   });

@@ -4,14 +4,18 @@
 
   class MainController {
 
-    constructor($http, $scope, socket) {
+    constructor($http, $scope,$state, socket, Auth) {
       this.$http = $http;
       this.socket = socket;
       this.awesomeThings = [];
+     
+     if(Auth.isLoggedIn()){
+         if(Auth.getCurrentUser().department == "finance")
+          $state.go('financePortal');
+          else
+           $state.go('eventsPortal'); 
 
-      $scope.$on('$destroy', function() {
-        socket.unsyncUpdates('thing');
-      });
+       }
     }
 
     $onInit() {

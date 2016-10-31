@@ -4,7 +4,6 @@ angular.module('erpChemclaveApp')
   .config(function($stateProvider) {
     $stateProvider.state('main', {
       url: '/',
-      template: '<main></main>',
-      authenticate: true
+      template: '<main></main>'
     });
   });
