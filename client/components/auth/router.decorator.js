@@ -27,11 +27,15 @@
           Auth.isLoggedIn(_.noop)
             .then(is => {
               if (is) {
-                return;
+                return 
+                 if($rootScope.CurrentUser().department == "finance")
+                  $state.go('financePortal');
+                 else
+                  $state.go('eventsPortal');
               }
 
               event.preventDefault();
-              $state.go('login');
+              $state.go('main');
             });
         }
       });

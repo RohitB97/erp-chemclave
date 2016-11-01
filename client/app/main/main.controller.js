@@ -4,21 +4,21 @@
 
   class MainController {
 
-    constructor($http, $scope,$state, socket, Auth) {
+    constructor($http, $scope, $rootScope, $state, socket, Auth) {
       this.$http = $http;
       this.socket = socket;
       this.awesomeThings = [];
      
-     if(Auth.isLoggedIn()){
-         if(Auth.getCurrentUser().department == "finance")
-          $state.go('financePortal');
+     if($rootScope.isLoggedIn()){
+         if($rootScope.CurrentUser().department == "finance")
+           $state.go('financePortal');
           else
            $state.go('eventsPortal'); 
 
        }
     }
 
-    $onInit() {
+    /*$onInit() {
       this.$http.get('/api/things')
         .then(response => {
           this.awesomeThings = response.data;
@@ -37,7 +37,7 @@
 
     deleteThing(thing) {
       this.$http.delete('/api/things/' + thing._id);
-    }
+    }*/
   }
 
   angular.module('erpChemclaveApp')

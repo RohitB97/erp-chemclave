@@ -3,23 +3,45 @@
 (function(){
 
 class EventsPortalComponent {
-  constructor($scope,$http,Auth) {
+  constructor($scope,$http,$rootScope,Auth) {
 
-     $scope.launching_event = Auth.getCurrentUser().department;
+     $scope.launching_event = $rootScope.CurrentUser().department;
 
-     $scope.event_launch = function(){
-       $http.post("/api/events/",$scope.launching_event).success(function(){
-          $scope.event_added = true;
-       });
-     };
-
-      $http.get("/api/events/"+Auth.getCurrentUser().department).success(function(){
+      $http.get("/api/events/"+$rootScope.CurrentUser().department).success(function(response){
          $scope.event = response;
          if(response.length>0)
           $scope.event_added = true;
          else
           $scope.event_added = false;
       });
+
+      $scope.info= function(){
+       $scope.event[0].event_info = $("#info").val();
+
+        $http.put("/api/events/"+$scope.event[0]._id,$scope.event[0]).success(function(response){
+           console.log(response);
+        });
+      };
+
+      $scope.PS= function(){
+       $scope.event[0].problem_statement = $("#PS").val();
+
+        $http.put("/api/events/"+$scope.event[0]._id,$scope.event[0]).success(function(response){
+           console.log(response);
+        });
+      };
+
+     $scope.event_launch = function(){
+      console.log($scope.event_update);
+       $http.post("/api/events/",$scope.launching_event).success(function(response){
+          $scope.event_added = true;
+       });
+
+       $http.get("/api/events/"+$rootScope.getCurrentUser().department).success(function(response){
+         $scope.event = response;
+      });
+
+     }; 
     
   }
 }

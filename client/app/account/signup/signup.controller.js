@@ -47,10 +47,7 @@ class SignupController {
         })
         .then(() => {
           // Account created, redirect to home
-          if(this.Auth.getCurrentUser().department == "Finance")
-          this.$state.go('financePortal');
-          else
-           this.$state.go('eventsPortal'); 
+          this.$state.go("main");
         })
         .catch(err => {
           err = err.data;
