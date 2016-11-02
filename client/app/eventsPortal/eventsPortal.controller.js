@@ -4,8 +4,12 @@
 
 class EventsPortalComponent {
   constructor($scope,$http,$rootScope,Auth) {
+    $scope.launching_event={};
 
-     $scope.launching_event = $rootScope.CurrentUser().department;
+    if($rootScope.CurrentUser().department == "finance")
+        $state.go('financePortal');
+
+     $scope.launching_event.name = $rootScope.CurrentUser().department;
 
       $http.get("/api/events/"+$rootScope.CurrentUser().department).success(function(response){
          $scope.event = response;
@@ -32,12 +36,11 @@ class EventsPortalComponent {
       };
 
      $scope.event_launch = function(){
-      console.log($scope.event_update);
        $http.post("/api/events/",$scope.launching_event).success(function(response){
           $scope.event_added = true;
        });
 
-       $http.get("/api/events/"+$rootScope.getCurrentUser().department).success(function(response){
+       $http.get("/api/events/"+$rootScope.CurrentUser().department).success(function(response){
          $scope.event = response;
       });
 

@@ -3,8 +3,11 @@
 (function(){
 
 class FinancePortalComponent {
-  constructor($scope,$http) {
+  constructor($scope,$http,$rootScope) {
     var i,j;
+
+    if($rootScope.CurrentUser().department != "finance")
+        $state.go('eventsPortal');
 
     $scope.show_options = false;
     $scope.user_list=[];

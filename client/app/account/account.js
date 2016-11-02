@@ -18,6 +18,15 @@ angular.module('erpChemclaveApp')
           $state.go(referrer);
         }
       })
+      .state('signupsuccess', {
+        url: '/signupsuccess',
+        referrer: 'main',
+        template: '',
+        controller: function($state, Auth) {
+          Auth.logout();
+          $state.go("login");
+        }
+      })
       .state('signup', {
         url: '/signup',
         templateUrl: 'app/account/signup/signup.html',

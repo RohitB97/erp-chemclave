@@ -7,9 +7,10 @@ class SignupController {
   submitted = false;
   //end-non-standard
 
-  constructor(Auth, $state,$scope) {
+  constructor(Auth, $state,$scope,$rootScope) {
     this.Auth = Auth;
     this.$state = $state;
+    this.$rootScope = $rootScope;
 
     $scope.signupOptions = [
           'Chem E Debate',
@@ -47,7 +48,12 @@ class SignupController {
         })
         .then(() => {
           // Account created, redirect to home
-          this.$state.go("main");
+         /* if(this.$rootScope.CurrentUser().department == "finance")
+           this.$state.go('financePortal');
+          else
+           this.$state.go('eventsPortal');*/
+         this.$state.go("signupsuccess");
+
         })
         .catch(err => {
           err = err.data;
@@ -59,6 +65,7 @@ class SignupController {
             this.errors[field] = error.message;
           });
         });
+
     }
   }
 }
