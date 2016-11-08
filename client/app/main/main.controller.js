@@ -9,11 +9,7 @@
       this.socket = socket;
       this.awesomeThings = [];
      
-     if($rootScope.isLoggedIn()){
-         if($rootScope.CurrentUser().department == "finance")
-           $state.go('financePortal');
-          else
-           $state.go('eventsPortal'); 
+     
 
        }
     }

@@ -6,13 +6,32 @@
     <button data-toggle='modal' data-target='#event_info' type="button" class="btn btn-primary btn-lg">Event Information</button>&nbsp;&nbsp;
     <button data-toggle='modal' data-target='#ps' type="button" class="btn btn-danger btn-lg">Problem Statement</button><br><br><br>
 
-    <ul class="list-group">
-     <li ng-repeat="user in event.registrations" class="list-group-item portal_panel">
-      <span>{{user.name}}</span>
-      <span class="details_pos">{{user.mobile}}</span>
-      <span class="details_pos">{{user.email}}</span>
-     </li>
-    </ul>
+    <div class="table-responsive">          
+     <table class="table table-bordered">
+      <thead>
+       <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>ID</th>
+        <th>College</th>
+        <th>Email</th>
+        <th>Mobile No.</th>
+        <th>City</th>
+      </tr>
+     </thead>
+    <tbody>
+      <tr ng-repeat="user in event.registrations">
+        <td>{{$index+1}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.ID}}</td>
+        <td>{{user.college}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.mobile}}</td>
+        <td>{{user.city}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
    
     <div id='event_info' class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
