@@ -3,11 +3,11 @@
 (function(){
 
 class EventsPortalComponent {
-  constructor($scope,$http,$rootScope,Auth) {
+  constructor($scope,$http,$rootScope,$state,Auth) {
     $scope.launching_event={};
 
-    if($rootScope.CurrentUser().department == "finance")
-        $state.go('financePortal');
+    //if($rootScope.CurrentUser().department == "finance")
+      //  $state.go('financePortal');
 
      $scope.launching_event.name = $rootScope.CurrentUser().department;
 

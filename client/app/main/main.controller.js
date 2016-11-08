@@ -8,10 +8,7 @@
       this.$http = $http;
       this.socket = socket;
       this.awesomeThings = [];
-     
-     
 
-       }
     }
 
     /*$onInit() {

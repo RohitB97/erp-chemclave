@@ -26,9 +26,8 @@
         } else {
           Auth.isLoggedIn(_.noop)
             .then(is => {
-              if (is) {
-                return 
-                 if($rootScope.CurrentUser().department == "finance")
+           if (is) { 
+               return if($rootScope.CurrentUser().department == "finance")
                   $state.go('financePortal');
                  else
                   $state.go('eventsPortal');
