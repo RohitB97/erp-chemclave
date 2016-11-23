@@ -11,6 +11,14 @@ class SignupController {
     this.Auth = Auth;
     this.$state = $state;
     this.$rootScope = $rootScope;
+    $scope.trueAccess = false;
+
+  $scope.accessCheck= function(){
+      if($scope.accessKey == "finance@CC" || $scope.accessKey == "events21@CC")
+      $scope.trueAccess = true;
+     setTimeout(function(){alert('Your session will expire in 5 minutes');},1000);
+     setTimeout(function(){location.reload();},300000);
+   };
 
     $scope.signupOptions = [
           'Chem E Debate',

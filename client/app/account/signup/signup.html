@@ -1,4 +1,27 @@
-<div class="container">
+<div ng-show="!trueAccess" class="container">
+ <h1>Enter Access key</h1>
+ 
+ <div class="row">
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+   <input type="text" class="form-control" ng-model="accessKey" required>
+  </div>
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+   <button ng-click="accessCheck()" class="btn btn-danger">Submit</button> 
+  </div>
+ </div><br><br>
+
+ <div class="jumbotron">
+  <h3>Fill up the below sheet with required details to receive the access key</h3><br><br>
+  <p><a target="_blank" href="https://google.com">Link to the sheet</a></p>
+ </div><br><br>
+
+ <button class="btn btn-primary btn-lg">Return to Login page</button>
+
+</div>
+
+<!--Sign Up page after true access-->  
+
+<div ng-show="trueAccess" class="container">
   <div class="row">
     <div class="col-sm-12">
       <h1>Sign up</h1>
@@ -22,11 +45,11 @@
           <label>Choose one from below (REQUIRED)</label><br><br>
 
        <select ng-model="vm.user.department" name="department" class="form-control" required>
-        <option></option>
+         <option></option>
         <optgroup label="--Finance Team--"></optgroup>
-        <option value="finance">Finance</option>
+         <option value="finance">Finance</option>
         <optgroup label="--Events Team--"></optgroup>       
-        <option ng-repeat="option in signupOptions" value="{{option}}">{{option}}</option>
+         <option ng-repeat="option in signupOptions" value="{{option}}">{{option}}</option>
       </select>
       
       <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
