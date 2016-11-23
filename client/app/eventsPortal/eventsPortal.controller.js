@@ -6,15 +6,18 @@ class EventsPortalComponent {
   constructor($scope,$http,$rootScope,$state,Auth) {
     $scope.launching_event={};
 
-    //if($rootScope.CurrentUser().department == "finance")
-      //  $state.go('financePortal');
+    if($rootScope.CurrentUser().department == "finance")
+        $state.go('financePortal');
 
      $scope.launching_event.name = $rootScope.CurrentUser().department;
 
       $http.get("/api/events/"+$rootScope.CurrentUser().department).success(function(response){
          $scope.event = response;
          if(response.length>0)
-          $scope.event_added = true;
+          {
+           $scope.event_added = true;
+           $scope.registrations = $scope.event[0].registrations;
+          } 
          else
           $scope.event_added = false;
       });
@@ -42,6 +45,7 @@ class EventsPortalComponent {
 
        $http.get("/api/events/"+$rootScope.CurrentUser().department).success(function(response){
          $scope.event = response;
+         $scope.registrations = $scope.event[0].registrations;
       });
 
      }; 

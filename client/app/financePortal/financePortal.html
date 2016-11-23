@@ -1,8 +1,8 @@
 <div class="container">
    <button class="btn btn-success btn-lg" ng-click="saveChanges()">Save Changes</button>&nbsp;&nbsp;
    <button class="btn btn-primary btn-lg" ng-click="undoChanges()">Undo Changes</button><br><br>
-    <ul class="list-group">
-      <li ng-repeat="user in user_list" class="list-group-item portal_panel">
+   <!-- <ul class="list-group">
+      <li class="list-group-item portal_panel">
       <span class="badge"><a target="_blank" href="" class="glyphicon glyphicon-file" aria-hidden="true"></a></span>
        <p>
          {{user.name}}
@@ -17,5 +17,37 @@
         </span>  
        </p>
       </li>
-    </ul>
+    </ul>-->
+   <div class="table-responsive">          
+     <table class="table table-bordered">
+      <thead>
+       <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Accomodation Status</th>
+        <th>Email</th>
+        <th>Mobile No.</th>
+        <th>Fee Receipt</th>
+        <th>Action</th>
+      </tr>
+     </thead>
+    <tbody>
+      <tr ng-repeat="user in user_list">
+        <td>{{$index+1}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.ID}}</td>
+        <td>{{user.accomodation_status}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.mobile}}</td>
+        <td><a target="_blank" href="" class="glyphicon glyphicon-file" aria-hidden="true"></a></td>
+        <td>
+            <button ng-show="!user.status_check" ng-click="accept(user,$index)" class="btn btn-success">Approve</button>
+            <button ng-show="user.status_check" ng-click="accept(user,$index)" class="btn btn-danger">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div> 
+
    </div>

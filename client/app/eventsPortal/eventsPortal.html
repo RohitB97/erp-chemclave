@@ -1,8 +1,9 @@
 <div ng-show="!event_added" class="container">
-  <button ng-click="event_launch()" class="btn btn-primary">Launch {{launching_event.name}}</button>
+  <button ng-click="event_launch()" class="btn btn-danger btn-lg">Launch {{launching_event.name}}</button>
 </div>  
 
- <div ng-show="event_added" class="container"> 
+ <div ng-show="event_added" class="container">
+  <h1><span class="label label-default">{{launching_event.name}}</span></h1><br><br> 
     <button data-toggle='modal' data-target='#event_info' type="button" class="btn btn-primary btn-lg">Event Information</button>&nbsp;&nbsp;
     <button data-toggle='modal' data-target='#ps' type="button" class="btn btn-danger btn-lg">Problem Statement</button><br><br><br>
 
@@ -20,7 +21,7 @@
       </tr>
      </thead>
     <tbody>
-      <tr ng-repeat="user in event.registrations">
+      <tr ng-repeat="user in registrations">
         <td>{{$index+1}}</td>
         <td>{{user.name}}</td>
         <td>{{user.ID}}</td>

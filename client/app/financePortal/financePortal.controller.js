@@ -6,23 +6,13 @@ class FinancePortalComponent {
   constructor($scope,$http,$state,$rootScope) {
     var i,j;
 
-    //if($rootScope.CurrentUser().department != "finance")
-      //  $state.go('eventsPortal');
+    if($rootScope.CurrentUser().department != "finance")
+        $state.go('eventsPortal');
 
-    $scope.show_options = false;
     $scope.user_list=[];
     $scope.event=[];
     $scope.acceptedList=[];
     $scope.pendingList=[];
-
-    
-    $scope.display_options = function(){
-    	if($scope.show_options==false)
-    	$scope.show_options = true;
-
-       else
-       	$scope.show_options = false;
-    };
 
     $http.get("http://chemclave.org/api/users/erp/getusers").success(function(response){
        $scope.user_list = response;
