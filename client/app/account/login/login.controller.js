@@ -1,7 +1,7 @@
 'use strict';
 
 class LoginController {
-  constructor(Auth, $state) {
+  constructor(Auth, $state, $rootScope) {
     this.user = {};
     this.errors = {};
     this.submitted = false;

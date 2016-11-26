@@ -3,15 +3,18 @@
 (function(){
 
 class EventsPortalComponent {
-  constructor($scope,$http,$rootScope,$state,Auth) {
+  constructor($scope,$http,$rootScope,$state,Auth,$stateParams) {
     $scope.launching_event={};
 
     if($rootScope.CurrentUser().department == "finance")
-        $state.go('financePortal');
+    {
+        $rootScope.warning();
+        $state.go('main');
+    }    
+     
+     $scope.launching_event.name = $stateParams.currentEvent;
 
-     $scope.launching_event.name = $rootScope.CurrentUser().department;
-
-      $http.get("/api/events/"+$rootScope.CurrentUser().department).success(function(response){
+      $http.get("/api/events/"+$stateParams.currentEvent).success(function(response){
          $scope.event = response;
          if(response.length>0)
           {
@@ -20,7 +23,7 @@ class EventsPortalComponent {
           } 
          else
           $scope.event_added = false;
-      });
+       });
 
       $scope.info= function(){
        $scope.event[0].event_info = $("#info").val();
@@ -43,7 +46,7 @@ class EventsPortalComponent {
           $scope.event_added = true;
        });
 
-       $http.get("/api/events/"+$rootScope.CurrentUser().department).success(function(response){
+       $http.get("/api/events/"+$scope.launching_event).success(function(response){
          $scope.event = response;
          $scope.registrations = $scope.event[0].registrations;
       });

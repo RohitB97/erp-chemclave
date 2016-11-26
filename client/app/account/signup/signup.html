@@ -1,4 +1,4 @@
-<div ng-show="!trueAccess" class="container">
+<!--<div ng-show="!trueAccess" class="container">
  <h1>Enter Access key</h1>
  
  <div class="row">
@@ -12,17 +12,17 @@
 
  <div class="jumbotron">
   <h3>Fill up the below sheet with required details, an email containing the access key will be sent</h3><br><br>
-  <p><a target="_blank" href="https://google.com">Link to the sheet</a></p><br><br>
-  <span>For queries, contact us at <u>webops.chesiitm@gmail.com</u></span>
+  <p><a target="_blank" href="https://docs.google.com/spreadsheets/d/1woa2WSa5B8X1Hwg6pWcthaMdCvm6eZi1_HS0b-PcnkU/edit?usp=drive_web">Link to the sheet</a></p><br><br>
+  <p>For any queries, contact <i>rohit@chemclave.org</i></p>
  </div><br><br>
 
  <a ui-sref="login" class="btn btn-primary btn-lg">Return to Login page</a>
 
-</div>
+</div>-->
 
 <!--Sign Up page after true access-->  
 
-<div ng-show="trueAccess" class="container">
+<div class="container">
   <div class="row">
     <div class="col-sm-12">
       <h1>Sign up</h1>
@@ -41,19 +41,36 @@
           </p>
         </div>
 
-        <div class="form-group" ng-class="{ 'has-success': form.department.$valid && vm.submitted,
+      <div class="form-group" ng-class="{ 'has-success': form.role.$valid && vm.submitted,
+                                            'has-error': form.role.$invalid && vm.submitted }">
+          <label>Choose one from below (Role)</label><br><br>
+
+       <select ng-model="vm.user.role" name="role" class="form-control" required>
+         <option></option>
+         <option value="coordinator">Coordinator</option>
+         <option value="core">Core</option>       
+      </select>
+      
+      <p class="help-block" ng-show="form.role.$error.required && vm.submitted">
+            A role is required
+          </p>
+
+        </div>  
+
+      <div ng-show="vm.user.role" class="form-group" ng-class="{ 'has-success': form.department.$valid && vm.submitted,
                                             'has-error': form.department.$invalid && vm.submitted }">
-          <label>Choose one from below (REQUIRED)</label><br><br>
+          <label>Choose one from below (Department)</label><br><br>
 
        <select ng-model="vm.user.department" name="department" class="form-control" required>
          <option></option>
         <optgroup label="--Finance Team--"></optgroup>
          <option value="finance">Finance</option>
         <optgroup label="--Events Team--"></optgroup>       
-         <option ng-repeat="option in signupOptions" value="{{option}}">{{option}}</option>
+         <option ng-show="vm.user.role == 'coordinator'" ng-repeat="option in signupOptions" value="{{option}}">{{option}}</option>
+         <option ng-show="vm.user.role == 'core'" value="events">Events</option>
       </select>
       
-      <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
+      <p class="help-block" ng-show="form.department.$error.required && vm.submitted">
             A department is required
           </p>
 

@@ -8,4 +8,35 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
     $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(true);
-  });
+  })
+
+  .controller("indexCtrl",["$rootScope",function($rootScope){
+      $rootScope.festEvents = [
+          'Chem E Debate',
+          'Censino',
+          'Paper & Poster presentation',
+          'Cheminnovate',
+          'Project X',
+          'Disaster scene investigation',
+          'Chemical Entrepreneurship',
+          'Aqua Rocket',
+          'Chemical X',
+          'Open quiz',
+          'Puzzle champ',
+          'Chemieconnexion',
+          'CheQ',
+          'Chem E Dart',
+          'ChemAdmad',
+          'Treasure hunt',
+          'Aspen Plus + Simulation Competition',
+          'R programming + Competition',
+          'Comsol workshop',
+          'Art of Research Writing',
+          'Forensics Workshop'
+        ];
+
+      $rootScope.warning = function(){
+        alert('You only have access to your respective portal');
+      };  
+  
+  }]); 

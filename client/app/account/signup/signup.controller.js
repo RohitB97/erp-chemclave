@@ -11,37 +11,16 @@ class SignupController {
     this.Auth = Auth;
     this.$state = $state;
     this.$rootScope = $rootScope;
-    $scope.trueAccess = false;
+   // $scope.trueAccess = false;
 
-  $scope.accessCheck= function(){
+  /*$scope.accessCheck= function(){
       if($scope.accessKey == "finance@CC17" || $scope.accessKey == "events21@CC17")
       $scope.trueAccess = true;
      setTimeout(function(){alert('Your session will expire in 5 minutes');},1000);
      setTimeout(function(){location.reload();},300000);
-   };
+   };*/
 
-    $scope.signupOptions = [
-          'Chem E Debate',
-          'Censino',
-          'Paper & Poster presentation',
-          'Cheminnovate',
-          'Project X',
-          'Disaster scene investigation',
-          'Chemical Entrepreneurship',
-          'Aqua Rocket',
-          'Chemical X',
-          'Open quiz',
-          'Puzzle champ',
-          'Chemieconnexion',
-          'CheQ',
-          'Chem E Dart',
-          'ChemAdmad',
-          'Treasure hunt',
-          'Aspen Plus + Simulation Competition',
-          'R programming + Competition',
-          'Comsol workshop',
-          'Art of Research Writing',
-          'Forensics Workshop'];
+    $scope.signupOptions = $rootScope.festEvents;
   }
 
   register(form) {
@@ -52,6 +31,7 @@ class SignupController {
           name: this.user.name,
           email: this.user.email,
           department: this.user.department,
+          role: this.user.role,
           password: this.user.password
         })
         .then(() => {

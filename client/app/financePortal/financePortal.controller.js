@@ -7,10 +7,12 @@ class FinancePortalComponent {
     var i,j;
 
     if($rootScope.CurrentUser().department != "finance")
-        $state.go('eventsPortal');
+    {
+        $rootScope.warning();
+        $state.go('main');
+    }    
 
     $scope.user_list=[];
-    $scope.event=[];
     $scope.acceptedList=[];
     $scope.pendingList=[];
 

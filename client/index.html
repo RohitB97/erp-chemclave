@@ -22,7 +22,7 @@
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="erpChemclaveApp">
+  <body ng-app="erpChemclaveApp" ng-controller="indexCtrl">
     <!--[if lt IE 7]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -81,17 +81,19 @@
       <script src="app/admin/admin.module.js"></script>
       <script src="components/auth/auth.module.js"></script>
       <script src="components/util/util.module.js"></script>
-      <script src="app/main/main.js"></script>
+      <script src="app/main/main.controller.js"></script>
       <script src="app/admin/admin.controller.js"></script>
       <script src="app/account/account.js"></script>
       <script src="app/admin/admin.router.js"></script>
       <script src="app/app.constant.js"></script>
+      <script src="app/eventsCorePortal/eventsCorePortal.controller.js"></script>
+      <script src="app/eventsCorePortal/eventsCorePortal.js"></script>
       <script src="app/eventsPortal/eventsPortal.controller.js"></script>
       <script src="app/eventsPortal/eventsPortal.js"></script>
       <script src="app/financePortal/financePortal.controller.js"></script>
       <script src="app/financePortal/financePortal.js"></script>
-      <script src="app/main/main.controller.js"></script>
       <script src="app/account/login/login.controller.js"></script>
+      <script src="app/main/main.js"></script>
       <script src="app/account/settings/settings.controller.js"></script>
       <script src="components/auth/auth.service.js"></script>
       <script src="components/auth/interceptor.service.js"></script>

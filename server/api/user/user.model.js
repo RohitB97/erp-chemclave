@@ -8,14 +8,11 @@ import {Schema} from 'mongoose';
 var UserSchema = new Schema({
   name: String,
   department: String,
+  role: String,
   email: {
     type: String,
     lowercase: true,
     required: true
-  },
-  role: {
-    type: String,
-    default: 'user'
   },
   password: {
     type: String,
