@@ -10,7 +10,9 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
     $locationProvider.html5Mode(true);
   })
 
-  .controller("indexCtrl",["$rootScope",function($rootScope){
+  .controller("indexCtrl",["$rootScope","Auth",function($rootScope,Auth){
+    $rootScope.isLoggedIn = Auth.isLoggedIn;
+    $rootScope.CurrentUser = Auth.getCurrentUser;
       $rootScope.festEvents = [
           'Chem E Debate',
           'Censino',

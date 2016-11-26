@@ -7,10 +7,8 @@ class NavbarController {
   //end-non-standard
 
   constructor($rootScope,Auth) {
-    $rootScope.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
-    $rootScope.CurrentUser = Auth.getCurrentUser;
   }
 
 }
