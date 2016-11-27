@@ -61,9 +61,10 @@
        */
       createUser(user, callback) {
         return User.save(user, function(data) {
-            $cookies.put('token', data.token);
-            currentUser = User.get();
-            return safeCb(callback)(null, user);
+               return;
+           // $cookies.put('token', data.token);
+            //currentUser = User.get();
+             //safeCb(callback)(null, user);
           }, function(err) {
             Auth.logout();
             return safeCb(callback)(err);
