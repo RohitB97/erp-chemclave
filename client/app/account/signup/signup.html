@@ -1,26 +1,9 @@
-<!--<div ng-show="!trueAccess" class="container">
- <h1>Enter Access key</h1>
- 
- <div class="row">
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-   <input type="text" class="form-control" ng-model="accessKey" required>
-  </div>
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-   <button ng-click="accessCheck()" class="btn btn-danger">Submit</button> 
-  </div>
- </div><br><br>
-
- <div class="jumbotron">
-  <h3>Fill up the below sheet with required details, an email containing the access key will be sent</h3><br><br>
-  <p><a target="_blank" href="https://docs.google.com/spreadsheets/d/1woa2WSa5B8X1Hwg6pWcthaMdCvm6eZi1_HS0b-PcnkU/edit?usp=drive_web">Link to the sheet</a></p><br><br>
+<div class="jumbotron">
+  <p>You can only login after we activate your account</p>
+  <p>Kindly fill the sheet below after you finish your registration</p>
+<p><a target="_blank" href="https://docs.google.com/spreadsheets/d/1woa2WSa5B8X1Hwg6pWcthaMdCvm6eZi1_HS0b-PcnkU/edit?usp=drive_web">Link to the sheet</a></p><br>
   <p>For any queries, contact <i>rohit@chemclave.org</i></p>
- </div><br><br>
-
- <a ui-sref="login" class="btn btn-primary btn-lg">Return to Login page</a>
-
-</div>-->
-
-<!--Sign Up page after true access-->  
+</div>  
 
 <div class="container">
   <div class="row">
@@ -43,7 +26,7 @@
 
       <div class="form-group" ng-class="{ 'has-success': form.role.$valid && vm.submitted,
                                             'has-error': form.role.$invalid && vm.submitted }">
-          <label>Choose one from below (Role)</label><br><br>
+          <label>Choose your role from the list below</label><br>
 
        <select ng-model="vm.user.role" name="role" class="form-control" required>
          <option></option>
@@ -59,7 +42,7 @@
 
       <div ng-show="vm.user.role" class="form-group" ng-class="{ 'has-success': form.department.$valid && vm.submitted,
                                             'has-error': form.department.$invalid && vm.submitted }">
-          <label>Choose one from below (Department)</label><br><br>
+          <label>Choose your department from the list below</label><br>
 
        <select ng-model="vm.user.department" name="department" class="form-control" required>
          <option></option>
@@ -125,7 +108,7 @@
 
         <div>
           <button class="btn btn-success btn-lg btn-register" type="submit">
-            Sign up
+            Register
           </button>
           <a class="btn btn-primary btn-lg btn-login" ui-sref="login">
             Login

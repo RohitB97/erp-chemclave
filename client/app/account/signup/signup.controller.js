@@ -11,14 +11,6 @@ class SignupController {
     this.Auth = Auth;
     this.$state = $state;
     this.$rootScope = $rootScope;
-   // $scope.trueAccess = false;
-
-  /*$scope.accessCheck= function(){
-      if($scope.accessKey == "finance@CC17" || $scope.accessKey == "events21@CC17")
-      $scope.trueAccess = true;
-     setTimeout(function(){alert('Your session will expire in 5 minutes');},1000);
-     setTimeout(function(){location.reload();},300000);
-   };*/
 
     $scope.signupOptions = $rootScope.festEvents;
   }
@@ -35,11 +27,6 @@ class SignupController {
           password: this.user.password
         })
         .then(() => {
-          // Account created, redirect to home
-         /* if(this.$rootScope.CurrentUser().department == "finance")
-           this.$state.go('financePortal');
-          else
-           this.$state.go('eventsPortal');*/
          this.$state.go("signupsuccess");
 
         })

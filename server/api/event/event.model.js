@@ -7,7 +7,10 @@ var EventSchema = new mongoose.Schema({
   problem_statement: String,
   event_info: String,
   registrations: Array,
-  active: Boolean
+  active: {
+  	type: Boolean,
+  	default: false
+  }
 });
 
 export default mongoose.model('Event', EventSchema);
