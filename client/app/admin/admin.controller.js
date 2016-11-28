@@ -12,7 +12,9 @@
       });
 
      $scope.acceptUser = function(user){
-       Auth.createUser({
+
+      if(user.department == 'finance'){
+        Auth.createUser({
           name: user.name,
           email: user.email,
           department: user.department,
@@ -22,9 +24,29 @@
             $http.delete("api/pendingusers/"+user._id).success(function(){
 
             });
-           alert('User has been accepted!'); 
+           alert('Finance User has been accepted!'); 
            location.reload();
         });
+      }
+
+      else {
+       Auth.createUser({
+          name: user.name,
+          email: user.email,
+          department: user.department,
+          event: user.event,
+          role: user.role,
+          password: user.password
+        }).then(() => {
+            $http.delete("api/pendingusers/"+user._id).success(function(){
+
+            });
+           alert('Events User has been accepted!'); 
+           location.reload();
+        });
+
+       } 
+     
      };
 
     }

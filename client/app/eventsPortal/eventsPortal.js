@@ -6,6 +6,7 @@ angular.module('erpChemclaveApp')
       .state('eventsPortal', {
         url: '/eventsPortal/:currentEvent',
         template: '<events-portal></events-portal>',
-        authenticate: 'coordinator'
+        authenticate: 'coordinator',
+        department: 'events'
       });
   });

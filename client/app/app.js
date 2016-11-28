@@ -12,7 +12,7 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
 
   .controller("indexCtrl",["$rootScope","Auth",function($rootScope,Auth){
     $rootScope.isLoggedIn = Auth.isLoggedIn;
-    $rootScope.CurrentUser = Auth.getCurrentUser;
+      
       $rootScope.festEvents = [
           'Chem E Debate',
           'Censino',
@@ -35,10 +35,6 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
           'Comsol workshop',
           'Art of Research Writing',
           'Forensics Workshop'
-        ];
-
-      $rootScope.warning = function(){
-        alert('You only have access to your respective portal');
-      };  
+        ];  
   
   }]); 

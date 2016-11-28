@@ -40,7 +40,7 @@
 
         </div>  
 
-      <div ng-show="user.role" class="form-group" ng-class="{ 'has-success': form.department.$valid && submitted,
+      <div class="form-group" ng-class="{ 'has-success': form.department.$valid && submitted,
                                             'has-error': form.department.$invalid && submitted }">
           <label>Choose your department from the list below</label><br>
 
@@ -49,12 +49,27 @@
         <optgroup label="--Finance Team--"></optgroup>
          <option value="finance">Finance</option>
         <optgroup label="--Events Team--"></optgroup>       
-         <option ng-show="user.role == 'coordinator'" ng-repeat="option in signupOptions" value="{{option}}">{{option}}</option>
-         <option ng-show="user.role == 'core'" value="events">Events</option>
+         <option value="events">Events</option>
       </select>
       
       <p class="help-block" ng-show="form.department.$error.required && submitted">
             A department is required
+          </p>
+
+        </div>
+
+      <div ng-show="user.department == 'events'" class="form-group" ng-class="{ 'has-success': form.event.$valid && submitted,
+                                            'has-error': form.event.$invalid && submitted }">
+          <label>Choose your event from the list below</label><br>
+
+       <select ng-model="user.event" name="event" class="form-control" required>
+         <option></option>
+         <option ng-show="user.role == 'core'" value="All Events">All the Events</option>       
+         <option ng-show="user.role == 'coordinator'" ng-repeat="option in signupEvents" value="{{option}}">{{option}}</option>
+      </select>
+      
+      <p class="help-block" ng-show="form.event.$error.required && submitted">
+            Choose an option
           </p>
 
         </div>

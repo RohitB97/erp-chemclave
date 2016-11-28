@@ -9,7 +9,7 @@ class SignupController {
 
   constructor(Auth,$http,$state,$scope,$rootScope) {
     
-    $scope.signupOptions = $rootScope.festEvents;
+    $scope.signupEvents = $rootScope.festEvents;
    
     $scope.register= function(form) {
       $scope.submitted = true;
@@ -18,10 +18,11 @@ class SignupController {
 
        $http.post("api/pendingusers/",$scope.user).success(function(){
 
+           alert('Please fill the sheet above! Your account will be activated soon');
+           $state.go('login');
+
        });
 
-       alert('Please fill the sheet above! Your account will be activated soon');
-       $state.go('login');
       }
     };
 

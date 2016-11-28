@@ -9,6 +9,7 @@ var UserSchema = new Schema({
   name: String,
   department: String,
   role: String,
+  event: String,
   email: {
     type: String,
     lowercase: true,

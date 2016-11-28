@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 var PendinguserSchema = new mongoose.Schema({
   name: String,
   department: String,
+  event:String,
   role: String,
   email: String,
   password: String

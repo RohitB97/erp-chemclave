@@ -14,7 +14,15 @@
           Auth.hasRole(next.authenticate, _.noop)
             .then(has => {
               if (has) {
+              
+               if(!next.department)
                 return;
+               
+               if(Auth.getCurrentUser().department == next.department)
+                return;
+               
+               else
+                return $state.go('main');
               }
 
               event.preventDefault();

@@ -5,12 +5,6 @@
 class EventsCorePortalComponent {
   constructor($scope,$rootScope) {
      
-     if($rootScope.CurrentUser().department == "finance")
-     {
-        $rootScope.warning();
-        $state.go('main');       
-     }
-
      $scope.portalEvents = $rootScope.festEvents;
 
   }

@@ -6,6 +6,7 @@ angular.module('erpChemclaveApp')
       .state('financePortal', {
         url: '/financePortal',
         template: '<finance-portal></finance-portal>',
-        authenticate: 'coordinator'
+        authenticate: 'coordinator',
+        department: 'finance'
       });
   });

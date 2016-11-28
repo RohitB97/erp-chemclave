@@ -9,10 +9,12 @@
       this.socket = socket;
       this.awesomeThings = [];
 
-      if($rootScope.CurrentUser().role == 'coordinator')
+      if($rootScope.Currentuser.role == 'coordinator')
         $scope.coordinator = true;
 
-      $scope.department = $rootScope.CurrentUser().department;
+      $scope.userEvent = $rootScope.Currentuser.event;
+
+      alert('You only have access to your respective portal');
 
     }
 

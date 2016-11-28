@@ -5,28 +5,24 @@
 class EventsPortalComponent {
   constructor($scope,$http,$rootScope,$state,Auth,$stateParams) {
     $scope.launching_event={};
-
-    if($rootScope.CurrentUser().department == "finance")
-    {
-        $rootScope.warning();
-        $state.go('main');
-    }    
      
      $scope.launching_event.name = $stateParams.currentEvent;
 
       $http.get("/api/events/"+$stateParams.currentEvent).success(function(response){
          $scope.event = response;
+         
          if(response.length>0)
           {
-            
+            $scope.event_added = true;
+
             if($scope.event[0].active == true)
               $('#toggleSwitch').attr( 'checked', true );
             else
               $('#toggleSwitch').removeAttr('checked'); 
-           
-           $scope.event_added = true;
+
            $scope.registrations = $scope.event[0].registrations;
           } 
+         
          else
           $scope.event_added = false;
        }); 
