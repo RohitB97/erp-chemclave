@@ -4,13 +4,14 @@
 
 class FinancePortalComponent {
   constructor($scope,$http,$state,$rootScope) {
-    var i,j;
 
     if($rootScope.CurrentUser().department != "finance")
     {
         $rootScope.warning();
         $state.go('main');
-    }    
+    }
+
+    var i,j;    
 
     $scope.user_list=[];
     $scope.acceptedList=[];
