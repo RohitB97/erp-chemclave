@@ -35,11 +35,10 @@ class EventsPortalComponent {
        $scope.event[0].event_info = $("#info").val();
 
         $http.put("/api/events/"+$scope.event[0]._id,$scope.event[0]).success(function(response){
-    
-        });
-
-        $http.get("/api/events/"+$stateParams.currentEvent).success(function(response){
-          $scope.event = response;
+           
+           $http.get("/api/events/"+$stateParams.currentEvent).success(function(response){
+               $scope.event = response;
+            });
         });
 
       };
@@ -49,24 +48,22 @@ class EventsPortalComponent {
 
         $http.put("/api/events/"+$scope.event[0]._id,$scope.event[0]).success(function(response){
            
-        });
-        
-        $http.get("/api/events/"+$stateParams.currentEvent).success(function(response){
-          $scope.event = response;
-        });
+           $http.get("/api/events/"+$stateParams.currentEvent).success(function(response){
+                $scope.event = response;
+            });
+        });       
 
       };
 
      $scope.event_launch = function(){
        $http.post("/api/events/",$scope.launching_event).success(function(response){
           $scope.event_added = true;
+
+          $http.get("/api/events/"+$scope.launching_event).success(function(response){
+             $scope.event = response;
+             $scope.registrations = $scope.event[0].registrations;
+           });
        });
-
-       $http.get("/api/events/"+$scope.launching_event).success(function(response){
-         $scope.event = response;
-         $scope.registrations = $scope.event[0].registrations;
-      });
-
      };
 
      $scope.export = function(){
@@ -87,12 +84,12 @@ class EventsPortalComponent {
        
       $http.put("/api/events/"+$scope.event[0]._id,$scope.event[0]).success(function(response){
            
-        });
+          $http.get("/api/events/"+$stateParams.currentEvent).success(function(response){
+             $scope.event = response;       
+             $scope.registrations = $scope.event[0].registrations;
+          });
+       });
         
-      $http.get("/api/events/"+$stateParams.currentEvent).success(function(response){
-        $scope.event = response;       
-        $scope.registrations = $scope.event[0].registrations;
-      });
     };
     
   }
