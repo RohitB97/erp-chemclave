@@ -10,7 +10,7 @@
     <li class="list-group-item" ng-repeat="user in admin.users">
 	    <div class="user-info">
 	        <strong>{{user.name}}</strong><br>
-	        <span class="text-muted">{{user.email}}</span>
+	        <span class="text-muted">{{user.email}} ; {{user.department}} ; {{user.role}}</span>
 	    </div>
         <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
     </li>
@@ -28,6 +28,7 @@
         <th>Email</th>
         <th>Department</th>
         <th>Role</th>
+        <th>Events</th>
         <th>Action</th>
       </tr>
      </thead>
@@ -38,7 +39,11 @@
         <td>{{user.email}}</td>
         <td>{{user.department}}</td>
         <td>{{user.role}}</td>
-        <td><button ng-click="acceptUser(user)" class="btn btn-success">Accept</button></td>
+        <td>{{user.event}}</td>
+        <td>
+            <button ng-click="acceptUser(user)" class="btn btn-success">Accept</button>
+            <button ng-click="deleteUser(user)" class="btn btn-danger">Delete</button>
+        </td>
       </tr>
     </tbody>
    </table>

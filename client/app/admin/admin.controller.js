@@ -49,6 +49,15 @@
      
      };
 
+     $scope.deleteUser = function(user){
+        $http.delete("api/pendingusers/"+user._id).success(function(){
+
+        });
+
+        alert('User has been rejected');
+        location.reload(); 
+     };
+
     }
 
     delete(user) {

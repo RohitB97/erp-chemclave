@@ -31,7 +31,9 @@
                   $state.go(is ? 'main' : 'login');
                 });
             });
-        } else {
+        } 
+
+        else {
           Auth.isLoggedIn(_.noop)
             .then(is => {
            if (is) {
