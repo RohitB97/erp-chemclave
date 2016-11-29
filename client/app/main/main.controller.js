@@ -7,7 +7,7 @@
     constructor($http, $scope, $rootScope, $state, socket, Auth) {
       this.$http = $http;
       this.socket = socket;
-      this.awesomeThings = [];
+      this.awesomeThings = []; 
 
       $scope.roleCheck = function (){
         if($rootScope.Currentuser.role == 'coordinator')
@@ -17,7 +17,9 @@
         $scope.userEvent = $rootScope.Currentuser.event;
       };
 
-    $scope.roleCheck();
+      $scope.roleCheck();
+
+      setInterval($scope.roleCheck,500);
 
     }
   }

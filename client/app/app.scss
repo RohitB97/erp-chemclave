@@ -14,6 +14,39 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 0px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: coral;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: mintcream;
+}
+::-webkit-scrollbar-thumb:active {
+  background: coral;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+
 // Component styles are injected through grunt
 /* inject:scss */
 @import 'admin/admin.scss';

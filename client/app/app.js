@@ -10,7 +10,7 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
     $locationProvider.html5Mode(true);
   })
 
-  .controller("indexCtrl",["$rootScope","Auth",function($rootScope,Auth){
+  .controller("indexCtrl",["$rootScope","Auth","$state",function($rootScope,Auth,$state){
     $rootScope.isLoggedIn = Auth.isLoggedIn;
       
       $rootScope.festEvents = [
@@ -35,6 +35,6 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
           'Comsol workshop',
           'Art of Research Writing',
           'Forensics Workshop'
-        ];  
+        ];
   
   }]); 
