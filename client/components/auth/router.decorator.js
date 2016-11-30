@@ -21,7 +21,7 @@
                if(Auth.getCurrentUser().department == next.department)
                 return;
                
-               else
+               event.preventDefault();
                 return $state.go('main');
               }
 
