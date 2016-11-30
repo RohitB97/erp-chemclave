@@ -8,7 +8,6 @@
     var userRoles = appConfig.userRoles || [];
 
     if ($cookies.get('token') && $location.path() !== '/logout') {
-      $rootScope.Currentuser = User.get();
       currentUser = User.get();
     }
 
@@ -36,7 +35,9 @@
           })
           .then(user => {
             safeCb(callback)(null, user);
-            $rootScope.Currentuser = currentUser;
+
+            $cookies.put('userRole',currentUser.role);
+            $cookies.put('userEvent',currentUser.event);
             return user;
           })
           .catch(err => {
@@ -51,7 +52,8 @@
        */
       logout() {
         $cookies.remove('token');
-        $rootScope.currentuser = {};
+        $cookies.remove('userRole');
+        $cookies.remove('userEvent');
         currentUser = {};
       },
 

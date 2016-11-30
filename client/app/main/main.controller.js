@@ -4,22 +4,20 @@
 
   class MainController {
 
-    constructor($http, $scope, $rootScope, $state, socket, Auth) {
+    constructor($http, $scope, $rootScope, $state, socket, Auth, $cookies) {
       this.$http = $http;
       this.socket = socket;
       this.awesomeThings = []; 
 
       $scope.roleCheck = function (){
-        if($rootScope.Currentuser.role == 'coordinator')
+        if($cookies.get('userRole') == 'coordinator')
           $scope.coordinator = true;
-        if($rootScope.Currentuser.role == 'core')
+        if($cookies.get('userRole') == 'core')
           $scope.coordinator = false;
-        $scope.userEvent = $rootScope.Currentuser.event;
+        $scope.userEvent = $cookies.get('userEvent');
       };
 
       $scope.roleCheck();
-
-      setInterval($scope.roleCheck,500);
 
     }
   }
