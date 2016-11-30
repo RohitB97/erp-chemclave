@@ -11,7 +11,6 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
   })
 
   .controller("indexCtrl",["$rootScope","Auth","$state",function($rootScope,Auth,$state){
-    $rootScope.isLoggedIn = Auth.isLoggedIn;
       
       $rootScope.festEvents = [
           'Chem E Debate',

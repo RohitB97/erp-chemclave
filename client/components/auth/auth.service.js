@@ -30,7 +30,7 @@
             password: password
           })
           .then(res => {
-            $cookies.put('token', res.data.token);
+            $cookies.put('token', res.data.token);           
             currentUser = User.get();
             return currentUser.$promise;
           })
