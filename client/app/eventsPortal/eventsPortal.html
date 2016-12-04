@@ -1,8 +1,4 @@
- <div ng-show="!event_added" class="container">
-   <button ng-click="event_launch()" class="btn btn-danger btn-lg">Launch {{launching_event.name}}</button>
- </div>  
-
- <div ng-show="event_added" class="container">
+<div ng-show="event_added" class="container">
   
   <label class="switch">
    <input ng-click="toggleStatus()" id="toggleSwitch" type="checkbox">
@@ -79,4 +75,9 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
- </div>
+</div>
+
+<div ng-show="!event_added" class="container">
+   <button ng-click="event_launch()" class="btn btn-danger btn-lg">Launch {{launching_event.name}}</button>
+</div>  
+
