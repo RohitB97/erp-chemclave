@@ -9,8 +9,8 @@
    <div class="slider round"></div>
   </label>
 
-  <h1 ng-show="!event[0].active"><span class="label label-default">{{launching_event.name}} (Registrations are currently closed)</span></h1>
-  <h1 ng-show="event[0].active"><span class="label label-success">{{launching_event.name}} (Registrations are currently open)</span></h1><br><br>
+  <h1 ng-show="!event[0].active"><span class="label label-default">{{event[0].name}} (Registrations are currently closed)</span></h1>
+  <h1 ng-show="event[0].active"><span class="label label-success">{{event[0].name}} (Registrations are currently open)</span></h1><br><br>
     
     <button data-toggle='modal' data-target='#event_info' type="button" class="btn btn-primary btn-lg">Event Information</button>&nbsp;&nbsp;
     <button data-toggle='modal' data-target='#ps' type="button" class="btn btn-danger btn-lg">Problem Statement</button><br><br>

@@ -3,7 +3,7 @@
 (function(){
 
 class EventsPortalComponent {
-  constructor($scope,$http,$rootScope,$state,Auth,$stateParams) {
+  constructor($scope,$http,$rootScope,$state,$stateParams) {
     $scope.launching_event={};
      
      $scope.launching_event.name = $stateParams.currentEvent;

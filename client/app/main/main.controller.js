@@ -4,11 +4,8 @@
 
   class MainController {
 
-    constructor($http, $scope, $rootScope, $state, socket, Auth, $cookies) {
-      this.$http = $http;
-      this.socket = socket;
-      this.awesomeThings = []; 
-
+    constructor($http, $scope, $state, $cookies) {
+ 
       $scope.roleCheck = function (){
         if($cookies.get('userRole') == 'coordinator')
           $scope.coordinator = true;

@@ -3,7 +3,7 @@
 (function(){
 
 class FinancePortalComponent {
-  constructor($scope,$http,$state,$rootScope) {
+  constructor($scope,$http,$state) {
 
     var i,j;    
 
