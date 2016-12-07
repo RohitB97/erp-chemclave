@@ -10,9 +10,8 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
     $locationProvider.html5Mode(true);
   })
 
-  .controller("indexCtrl",["$rootScope",function($rootScope){
-      
-      $rootScope.festEvents = [
+  .run(function($rootScope){
+     $rootScope.festEvents = [
           'Chem E Debate',
           'Censino',
           'Paper & Poster presentation',
@@ -35,5 +34,4 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
           'Art of Research Writing',
           'Forensics Workshop'
         ];
-  
-  }]); 
+  });

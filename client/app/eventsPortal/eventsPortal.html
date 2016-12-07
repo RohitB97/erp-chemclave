@@ -1,4 +1,4 @@
-<div ng-show="event_added" class="container">
+<div class="container">
   
   <label class="switch">
    <input ng-click="toggleStatus()" id="toggleSwitch" type="checkbox">
@@ -10,7 +10,7 @@
     
     <button data-toggle='modal' data-target='#event_info' type="button" class="btn btn-primary btn-lg">Event Information</button>&nbsp;&nbsp;
     <button data-toggle='modal' data-target='#ps' type="button" class="btn btn-danger btn-lg">Problem Statement</button><br><br>
-    <button ng-click="export()" class="btn btn-warning btn-lg">Export data to Excel sheet</button>
+    <button ng-click="export()" class="btn btn-warning btn-lg">Import Registrations to Excel Sheet</button>
     <br><br>
 
     <div id="tableData" class="table-responsive">          
@@ -76,8 +76,4 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 </div>
-
-<div ng-show="!event_added" class="container">
-   <button ng-click="event_launch()" class="btn btn-danger btn-lg">Launch {{launching_event.name}}</button>
-</div>  
 

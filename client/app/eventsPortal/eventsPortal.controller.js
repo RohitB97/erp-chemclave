@@ -13,7 +13,6 @@ class EventsPortalComponent {
          
          if(response.length>0)
           {
-            $scope.event_added = true;
 
             if($scope.event[0].active == true)
               $('#toggleSwitch').attr( 'checked', true );
@@ -23,8 +22,17 @@ class EventsPortalComponent {
            $scope.registrations = $scope.event[0].registrations;
           } 
          
-         else
-          $scope.event_added = false;
+         else{
+            
+           $http.post("/api/events/",$scope.launching_event).success(function(response){
+
+            $http.get("/api/events/"+$scope.launching_event.name).success(function(response){
+              $scope.event = response;
+              $scope.registrations = $scope.event[0].registrations;
+            });
+          
+           });
+          }
        }); 
 
       $scope.info= function(){
@@ -50,17 +58,6 @@ class EventsPortalComponent {
         });       
 
       };
-
-     $scope.event_launch = function(){
-       $http.post("/api/events/",$scope.launching_event).success(function(response){
-          $scope.event_added = true;
-
-          $http.get("/api/events/"+$scope.launching_event).success(function(response){
-             $scope.event = response;
-             $scope.registrations = $scope.event[0].registrations;
-           });
-       });
-     };
 
      $scope.export = function(){
       $("#tableData").table2excel({
