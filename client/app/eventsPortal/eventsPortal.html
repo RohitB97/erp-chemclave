@@ -1,29 +1,55 @@
 <div class="container">
-  
+ 
+ <div class="row">
+ <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
   <label class="switch">
    <input ng-click="toggleStatus()" id="toggleSwitch" type="checkbox">
    <div class="slider round"></div>
   </label>
+ </div>
+ </div>
 
-  <h1 ng-show="!event[0].active"><span class="label label-default">{{event[0].name}} (Registrations are currently closed)</span></h1>
-  <h1 ng-show="event[0].active"><span class="label label-success">{{event[0].name}} (Registrations are currently open)</span></h1><br><br>
-    
-    <button data-toggle='modal' data-target='#event_info' type="button" class="btn btn-primary btn-lg">Event Information</button>&nbsp;&nbsp;
+<div ng-show="!event[0].active" class="row">
+ <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <h3><span class="label label-default">(Registrations are currently closed)</span></h3>
+ </div>
+</div>
+
+<div ng-show="event[0].active" class="row">
+ <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">  
+  <h3><span class="label label-success">(Registrations are currently open)</span></h3>
+ </div>
+</div>  
+
+<div class="row">
+ <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">    
+    <button data-toggle='modal' data-target='#event_info' type="button" class="btn btn-primary btn-lg">Event Information</button><br><br>
+ </div>
+</div> 
+
+<div class="row">
+ <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">    
     <button data-toggle='modal' data-target='#ps' type="button" class="btn btn-danger btn-lg">Problem Statement</button><br><br>
-    <button ng-click="export()" class="btn btn-warning btn-lg">Import Registrations to Excel Sheet</button>
-    <br><br>
+ </div>
+</div> 
 
-    <div id="tableData" class="table-responsive">          
-     <table class="table table-bordered">
+<div class="row">
+ <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">    
+    <button ng-click="export()" class="btn btn-warning btn-lg">Import Registrations to Excel Sheet</button><br><br>
+ </div>
+</div>    
+    
+ <div id="tableData" class="table-responsive">          
+    <table class="table table-bordered">
       <thead>
        <tr>
         <th>#</th>
         <th>Name</th>
         <th>ID</th>
-        <th>College</th>
+        <th class="hidden-xs hidden-sm">College</th>
         <th>Email</th>
         <th>Mobile No.</th>
-        <th>City</th>
+        <th class="hidden-xs hidden-sm">City</th>
       </tr>
      </thead>
     <tbody>
@@ -31,14 +57,14 @@
         <td>{{$index+1}}</td>
         <td>{{user.name}}</td>
         <td>{{user.ID}}</td>
-        <td>{{user.college}}</td>
+        <td class="hidden-xs hidden-sm">{{user.college}}</td>
         <td>{{user.email}}</td>
         <td>{{user.mobile}}</td>
-        <td>{{user.city}}</td>
+        <td class="hidden-xs hidden-sm">{{user.city}}</td>
       </tr>
     </tbody>
   </table>
-  </div>
+  </div>   
    
     <div id='event_info' class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -54,9 +80,9 @@
            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
            <button ng-click="info()" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
           </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </div>
+      </div>
+    </div>
 
     <div id='ps' class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -72,8 +98,8 @@
            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
            <button ng-click="PS()" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
           </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-</div>
+        </div>
+      </div>
+    </div>
+</div>    
 

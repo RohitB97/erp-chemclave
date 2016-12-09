@@ -42,7 +42,7 @@ class FinancePortalComponent {
 
        alert("Click the button to load the changes");
        
-       setTimeout(function(){$state.go('financePortal');},2000);
+       setTimeout(function(){$state.reload();},2000);
 
     };
 
@@ -50,7 +50,7 @@ class FinancePortalComponent {
       var choice = confirm("The changes will be reverted !");
        
        if(choice == true)
-        $state.go('financePortal');
+        $state.reload();
     };
 
     //Code for finance portal ends here
