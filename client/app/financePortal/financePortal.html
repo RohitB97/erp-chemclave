@@ -8,7 +8,8 @@
    <button class="btn btn-primary btn-lg" ng-click="undoChanges()">Undo Changes</button>
   </div>
  </div><br><br>   
-   
+ 
+ <i class="col-xs-12 hidden-sm hidden-md hidden-lg"><b>( Swipe horizontally to move across the whole table )</b></i>  
    <div class="table-responsive">          
      <table class="table table-bordered">
       <thead>
@@ -17,8 +18,8 @@
         <th>Name</th>
         <th>ID</th>
         <th>Accomodation</th>
-        <th class="hidden-xs hidden-sm">Email</th>
-        <th class="hidden-xs hidden-sm">Mobile No.</th>
+        <th>Email</th>
+        <th>Mobile No.</th>
         <th>Fee Receipt</th>
         <th>Action</th>
       </tr>
@@ -29,8 +30,8 @@
         <td>{{user.name}}</td>
         <td>{{user.ID}}</td>
         <td>{{user.accomodation_status}}</td>
-        <td class="hidden-xs hidden-sm">{{user.email}}</td>
-        <td class="hidden-xs hidden-sm">{{user.mobile}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.mobile}}</td>
         <td><a target="_blank" href="" class="glyphicon glyphicon-file" aria-hidden="true"></a></td>
         <td>
             <button ng-show="!user.status_check" ng-click="accept(user,$index)" class="btn btn-success">Approve</button>

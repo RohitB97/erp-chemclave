@@ -19,16 +19,16 @@
 
  <div role="tabpanel" class="tab-pane" id="verifyUser">
   <p></p>
-  <div class="container">          
+  <div class="table-responsive">          
      <table class="table table-bordered">
       <thead>
        <tr>
         <th>#</th>
         <th>Name</th>
         <th>Email</th>
-        <th class="hidden-xs hidden-sm">Department</th>
-        <th class="hidden-xs hidden-sm">Role</th>
-        <th class="hidden-xs hidden-sm">Events</th>
+        <th>Department</th>
+        <th>Role</th>
+        <th>Events</th>
         <th>Action</th>
       </tr>
      </thead>
@@ -37,14 +37,12 @@
         <td>{{$index+1}}</td>
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
-        <td class="hidden-xs hidden-sm">{{user.department}}</td>
-        <td class="hidden-xs hidden-sm">{{user.role}}</td>
-        <td class="hidden-xs hidden-sm">{{user.event}}</td>
+        <td>{{user.department}}</td>
+        <td>{{user.role}}</td>
+        <td>{{user.event}}</td>
         <td>
-            <button ng-click="acceptUser(user)" class="btn btn-success hidden-xs hidden-sm ">Accept</button>
-            <button ng-click="deleteUser(user)" class="btn btn-danger hidden-xs hidden-sm">Delete</button>
-            <button ng-click="acceptUser(user)" class="btn btn-success hidden-md hidden-lg">A</button>
-            <button ng-click="deleteUser(user)" class="btn btn-danger hidden-md hidden-lg">D</button>
+            <button ng-click="acceptUser(user)" class="btn btn-success">Accept</button>
+            <button ng-click="deleteUser(user)" class="btn btn-danger">Delete</button>
         </td>
       </tr>
     </tbody>
