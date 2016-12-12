@@ -2,6 +2,10 @@
 
 // Production specific configuration
 // =================================
+var conf = JSON.parse(process.env.APP_CONFIG);
+
+var mongoPassword = 'y7uy7uy7u'; 
+
 module.exports = {
   // Server IP
   ip:     process.env.OPENSHIFT_NODEJS_IP ||
@@ -19,6 +23,7 @@ module.exports = {
           process.env.MONGOHQ_URL ||
           process.env.OPENSHIFT_MONGODB_DB_URL +
           process.env.OPENSHIFT_APP_NAME ||
-          'mongodb://localhost/erpchemclave'
+          "mongodb://" + conf.mongo.user + ":" + mongoPassword + "@" +
+    conf.mongo.hostString
   }
 };
