@@ -3,7 +3,7 @@
 
 angular.module('erpChemclaveApp.constants', [])
 
-.constant('appConfig', {userRoles:['coordinator','core','admin']})
+.constant('appConfig', {userRoles:['coordinator','core','manager','admin']})
 
 ;
 })(angular);

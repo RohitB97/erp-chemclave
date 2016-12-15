@@ -9,7 +9,7 @@
       $scope.roleCheck = function (){
         if($cookies.get('userRole') == 'coordinator')
           $scope.coordinator = true;
-        if($cookies.get('userRole') == 'core')
+        else
           $scope.coordinator = false;
         $scope.userEvent = $cookies.get('userEvent');
       };

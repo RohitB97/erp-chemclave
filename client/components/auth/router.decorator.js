@@ -18,7 +18,7 @@
                if(!next.department)
                 return;
                
-               if(Auth.getCurrentUser().department == next.department)
+               if(Auth.getCurrentUser().department == next.department || Auth.getCurrentUser().department == 'qms')
                 return;
                
                event.preventDefault();

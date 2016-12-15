@@ -14,7 +14,12 @@ class SignupController {
     $scope.register= function(form) {
       $scope.submitted = true;
 
+      if($scope.user.department == 'qms')
+         $scope.user.event = 'All Events';
+
       if (form.$valid) {
+
+        $('#status').css('display','block');
 
        $http.post("api/pendingusers/",$scope.user).success(function(){
 

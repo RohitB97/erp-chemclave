@@ -31,7 +31,8 @@
        <select ng-model="user.role" name="role" class="form-control" required>
          <option></option>
          <option value="coordinator">Coordinator</option>
-         <option value="core">Core</option>       
+         <option value="core">Core</option>
+         <option value="manager">QMS Manager</option>       
       </select>
       
       <p class="help-block" ng-show="form.role.$error.required && submitted">
@@ -50,6 +51,8 @@
          <option value="finance">Finance</option>
         <optgroup label="--Events Team--"></optgroup>       
          <option value="events">Events</option>
+        <optgroup label="--QMS Team--"></optgroup>       
+         <option value="qms">QMS</option> 
       </select>
       
       <p class="help-block" ng-show="form.department.$error.required && submitted">
@@ -122,6 +125,8 @@
         </div>
 
         <div>
+
+        <p style="display:none;" id="status">Please wait....</p>
           <button class="btn btn-success btn-lg btn-register" type="submit">
             Register
           </button>

@@ -24,7 +24,7 @@
             $http.delete("api/pendingusers/"+user._id).success(function(){
 
             });
-           alert('Finance User has been accepted!'); 
+           alert('User has been accepted!'); 
            location.reload();
         });
       }
@@ -38,10 +38,10 @@
           role: user.role,
           password: user.password
         }).then(() => {
-            $http.delete("api/pendingusers/"+user._id).success(function(){
+            $http.delete("api/pendingusers/" + user._id).success(function(){
 
             });
-           alert('Events User has been accepted!'); 
+           alert('User has been accepted!'); 
            location.reload();
         });
 
@@ -50,7 +50,7 @@
      };
 
      $scope.deleteUser = function(user){
-        $http.delete("api/pendingusers/"+user._id).success(function(){
+        $http.delete("api/pendingusers/" + user._id).success(function(){
 
         });
 
