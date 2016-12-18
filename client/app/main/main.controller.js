@@ -11,7 +11,6 @@
           $scope.coordinator = true;
         else
           $scope.coordinator = false;
-        $scope.userEvent = $cookies.get('userEvent');
       };
 
       $scope.roleCheck();

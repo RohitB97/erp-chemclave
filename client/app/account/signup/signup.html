@@ -61,15 +61,29 @@
 
         </div>
 
-      <div ng-show="user.department == 'events'" class="form-group" ng-class="{ 'has-success': form.event.$valid && submitted,
+      <div ng-show="user.department == 'events' && user.role == 'coordinator'" class="form-group" ng-class="{ 'has-success': form.event.$valid && submitted,
                                             'has-error': form.event.$invalid && submitted }">
-          <label>Choose your event from the list below</label><br>
+          <label>Choose your events from the list below</label><br>
 
-       <select ng-model="user.event" name="event" class="form-control">
-         <option></option>
-         <option ng-show="user.role == 'core'" value="All Events">All the Events</option>       
-         <option ng-show="user.role == 'coordinator'" ng-repeat="option in signupEvents" value="{{option}}">{{option}}</option>
-      </select>
+       <select ng-model="events[0]" name="event" class="form-control">
+         <option></option>      
+         <option ng-repeat="option in signupEvents" value="{{option}}">{{option}}</option>
+       </select>
+
+       <select ng-model="events[1]" name="event" class="form-control">
+         <option></option>      
+         <option ng-repeat="option in signupEvents" value="{{option}}">{{option}}</option>
+       </select>
+
+       <select ng-model="events[2]" name="event" class="form-control">
+         <option></option>      
+         <option ng-repeat="option in signupEvents" value="{{option}}">{{option}}</option>
+       </select>
+
+       <select ng-model="events[3]" name="event" class="form-control">
+         <option></option>      
+         <option ng-repeat="option in signupEvents" value="{{option}}">{{option}}</option>
+       </select>
       
       <p class="help-block" ng-show="form.event.$error.required && submitted">
             Choose an option

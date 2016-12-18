@@ -30,7 +30,26 @@
       }
 
       else {
-       Auth.createUser({
+      if(user.role == 'coordinator'){   
+        Auth.createUser({
+          name: user.name,
+          email: user.email,
+          department: user.department,
+          coordEvents: user.coordEvents,
+          role: user.role,
+          password: user.password
+        }).then(() => {
+            $http.delete("api/pendingusers/" + user._id).success(function(){
+
+            });
+           alert('User has been accepted!'); 
+           location.reload();
+        });
+
+       }
+       
+       else{
+        Auth.createUser({
           name: user.name,
           email: user.email,
           department: user.department,
@@ -44,6 +63,8 @@
            alert('User has been accepted!'); 
            location.reload();
         });
+
+       } 
 
        } 
      

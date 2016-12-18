@@ -39,7 +39,7 @@
         <td>{{user.email}}</td>
         <td>{{user.department}}</td>
         <td>{{user.role}}</td>
-        <td>{{user.event}}</td>
+        <td>{{user.coordEvents[0]}}<br>{{user.coordEvents[1]}}<br>{{user.coordEvents[2]}}<br>{{user.coordEvents[3]}}</td>
         <td>
             <button ng-click="acceptUser(user)" class="btn btn-success">Accept</button>
             <button ng-click="deleteUser(user)" class="btn btn-danger">Delete</button>

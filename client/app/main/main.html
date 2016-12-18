@@ -1,8 +1,8 @@
 <div class="jumbotron">
   <h1>Events Portal</h1>
   <p>The changes in the portal will be reflected instantly in the website! Please be careful while handling the data.</p> 
-  <p ng-show="coordinator"><button ui-sref="eventsPortal({currentEvent:'{{userEvent}}'})" class="btn btn-primary btn-lg">Proceed (Only for events team)</button></p>
-  <p ng-show="!coordinator"><button ui-sref="eventsCorePortal({currentEvent:'{{userEvent}}'})" class="btn btn-primary btn-lg">Proceed (Only for events team)</button></p>
+  <p ng-show="coordinator"><button ui-sref="eventsCoordPortal" class="btn btn-primary btn-lg">Proceed (Only for events team)</button></p>
+  <p ng-show="!coordinator"><button ui-sref="eventsCorePortal" class="btn btn-primary btn-lg">Proceed (Only for events team)</button></p>
 </div>
 
 <br>
