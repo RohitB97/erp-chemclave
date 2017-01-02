@@ -34,8 +34,8 @@
         <td>{{user.mobile}}</td>
         <td><a target="_blank" href="" class="glyphicon glyphicon-file" aria-hidden="true"></a></td>
         <td>
-            <button ng-show="!user.status_check" ng-click="accept(user,$index)" class="btn btn-success">Approve</button>
-            <button ng-show="user.status_check" ng-click="accept(user,$index)" class="btn btn-danger">Reject</button>
+            <button ng-click="accept(user,$index)" class="btn btn-success">Approve</button>
+            <button ng-click="reject(user,$index)" class="btn btn-danger">Reject</button>
         </td>
       </tr>
     </tbody>

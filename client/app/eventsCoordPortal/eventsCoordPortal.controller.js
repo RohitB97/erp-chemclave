@@ -3,9 +3,11 @@
 (function(){
 
 class EventsCoordPortalComponent {
-  constructor($scope, Auth) {
-      $scope.coordinatorEvents = Auth.getCurrentUser().coordEvents;
+  constructor($scope, $cookies) {
+       
+       $scope.coordinatorEvents = $cookies.getObject('userEvents');
   }
+
 }
 
 angular.module('erpChemclaveApp')

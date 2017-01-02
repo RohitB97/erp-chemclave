@@ -60,25 +60,33 @@
           </p>
 
         </div>
-
+<hr>
       <div ng-show="user.department == 'events' && user.role == 'coordinator'" class="form-group" ng-class="{ 'has-success': form.event.$valid && submitted,
                                             'has-error': form.event.$invalid && submitted }">
           <label>Choose your events from the list below</label><br>
+          
+      <label>Event 1</label><br>
 
        <select ng-model="events[0]" name="event" class="form-control">
          <option></option>      
          <option ng-repeat="option in signupEvents" value="{{option}}">{{option}}</option>
        </select>
 
+      <label>Event 2</label><br> 
+
        <select ng-model="events[1]" name="event" class="form-control">
          <option></option>      
          <option ng-repeat="option in signupEvents" value="{{option}}">{{option}}</option>
        </select>
 
+      <label>Event 3</label><br> 
+
        <select ng-model="events[2]" name="event" class="form-control">
          <option></option>      
          <option ng-repeat="option in signupEvents" value="{{option}}">{{option}}</option>
        </select>
+
+      <label>Event 4</label><br> 
 
        <select ng-model="events[3]" name="event" class="form-control">
          <option></option>      
@@ -90,7 +98,7 @@
           </p>
 
         </div>
-
+<hr>
         <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
                                             'has-error': form.email.$invalid && submitted }">
           <label>Email</label>

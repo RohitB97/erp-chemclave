@@ -22,7 +22,10 @@
                 return;
                
                event.preventDefault();
-                return $state.go('main');
+
+               alert('You can only access ' + Auth.getCurrentUser().department + ' portal');
+               
+                 $state.go('main');
               }
 
               event.preventDefault();

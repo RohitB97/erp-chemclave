@@ -13,6 +13,8 @@ import User from '../api/user/user.model';
          provider: 'local',
          role: 'admin',
          name: 'Web Admin',
+         department:'qms',
+         event: 'All Events',
          email: 'admin@chemclave.org',
          password: 'y7uy7uy7u'
        })

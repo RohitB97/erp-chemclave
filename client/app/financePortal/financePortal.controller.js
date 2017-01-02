@@ -11,38 +11,36 @@ class FinancePortalComponent {
     $scope.acceptedList=[];
     $scope.pendingList=[];
 
-    $http.get("http://chemclave.org/api/users/erp/getusers").success(function(response){
+    $http.get("http://chemclave.org/api/users/erp/finance").success(function(response){
        $scope.user_list = response;
     });
 
     $scope.accept = function(user,index){
-      $scope.user_list[index].status_check = true;
-      $scope.user_list[index].accomodation_status = "Accepted";
+      $scope.user_list[index].accomodation_status = "Approved";
       $scope.acceptedList.push(user._id); 
     };
 
     $scope.reject = function(user,index){
-      $scope.user_list[index].status_check = false;
-      $scope.user_list[index].accomodation_status = "Pending";
-      $scope.pendingList.push(user._id);
+      $scope.user_list[index].accomodation_status = "Rejected";
+      $scope.rejectedList.push(user._id);
     };
 
     $scope.saveChanges = function(){
       for(i=0;i<$scope.acceptedList.length;i++)
        {   
-          $http.put("http://chemclave.org/api/users/accomAccept/"+$scope.acceptedList[i]).success(function(){
+          $http.put("http://chemclave.org/api/users/accomAccept/"+$scope.acceptedList[i], {}).success(function(){
            });
        }
 
-      for(j=0;j<$scope.pendingList.length;j++)
+      for(j=0;j<$scope.rejectedList.length;j++)
        {   
-          $http.put("http://chemclave.org/api/users/accomPending/"+$scope.pendingList[j]).success(function(){
+          $http.put("http://chemclave.org/api/users/accomReject/"+$scope.rejectedList[j], {}).success(function(){
            });
        }
 
-       alert("Click the button to load the changes");
+       alert("Please wait till the changes are loaded");
        
-       setTimeout(function(){$state.reload();},2000);
+       setTimeout(function(){$state.reload();},3000);
 
     };
 

@@ -13,6 +13,7 @@
 
     else{
       $cookies.remove('userRole');
+      $cookies.remove('userEvents');
     }
 
     var Auth = {
@@ -39,8 +40,9 @@
           })
           .then(user => {
             safeCb(callback)(null, user);
-
             $cookies.put('userRole',currentUser.role);
+            $cookies.putObject('userEvents',{'0':currentUser.coordEvents[0],'1':currentUser.coordEvents[1],
+                                '2':currentUser.coordEvents[2],'3':currentUser.coordEvents[3]});
             return user;
           })
           .catch(err => {
@@ -56,6 +58,7 @@
       logout() {
         $cookies.remove('token');
         $cookies.remove('userRole');
+        $cookies.remove('userEvents');
         currentUser = {};
       },
 

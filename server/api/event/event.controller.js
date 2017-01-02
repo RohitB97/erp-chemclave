@@ -83,12 +83,7 @@ export function create(req, res) {
 
 // Updates an existing Event in the DB
 export function update(req, res) {
-  if (req.body._id) {
-    delete req.body._id;
-  }
-  return Event.findById(req.params.id).exec()
-    .then(handleEntityNotFound(res))
-    .then(saveUpdates(req.body))
+  return Event.findByIdAndUpdate(req.params.id,req.body).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }
