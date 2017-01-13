@@ -6,14 +6,14 @@
 
     constructor($http, $scope, $state, $cookies) {
  
-      $scope.roleCheck = function (){
+    $scope.role_Check = function (){
         if($cookies.get('userRole') == 'coordinator')
           $scope.coordinator = true;
         else
           $scope.coordinator = false;
       };
 
-      $scope.roleCheck();
+      $scope.role_Check();
 
     }
   }

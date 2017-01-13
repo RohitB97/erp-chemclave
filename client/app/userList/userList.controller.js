@@ -4,7 +4,7 @@
 
 class UserListComponent {
   constructor($scope, $http) {
-    $http.get('http://chemclave.org/api/users/userCount').success(function(response){
+    $http.get('http://www.chemclave.org/api/users/userCount').success(function(response){
         $scope.webUsers = response;
     });
   }

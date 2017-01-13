@@ -11,7 +11,7 @@ class FinancePortalComponent {
     $scope.acceptedList=[];
     $scope.pendingList=[];
 
-    $http.get("http://chemclave.org/api/users/erp/finance").success(function(response){
+    $http.get("http://www.chemclave.org/api/users/erp/finance").success(function(response){
        $scope.user_list = response;
     });
 
@@ -28,13 +28,13 @@ class FinancePortalComponent {
     $scope.saveChanges = function(){
       for(i=0;i<$scope.acceptedList.length;i++)
        {   
-          $http.put("http://chemclave.org/api/users/accomAccept/"+$scope.acceptedList[i], {}).success(function(){
+          $http.put("http://www.chemclave.org/api/users/accomAccept/"+$scope.acceptedList[i], {}).success(function(){
            });
        }
 
       for(j=0;j<$scope.rejectedList.length;j++)
        {   
-          $http.put("http://chemclave.org/api/users/accomReject/"+$scope.rejectedList[j], {}).success(function(){
+          $http.put("http://www.chemclave.org/api/users/accomReject/"+$scope.rejectedList[j], {}).success(function(){
            });
        }
 

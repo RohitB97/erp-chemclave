@@ -6,7 +6,10 @@ var EventSchema = new mongoose.Schema({
   name: String,
   problem_statement: String,
   event_info: String,
+  rules: String,
+  prizemoney: String,
   registrations: Array,
+  QA: Array,
   active: {
   	type: Boolean,
   	default: false

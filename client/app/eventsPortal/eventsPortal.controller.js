@@ -37,6 +37,8 @@ class EventsPortalComponent {
 
       $scope.info= function(){
        $scope.event[0].event_info = $("#info").val();
+       $scope.event[0].prizemoney = $("#PM").val();
+       $scope.event[0].rules = $("#rules").val();
 
         $http.put("/api/events/"+$scope.event[0]._id,$scope.event[0]).success(function(response){
            
@@ -49,6 +51,17 @@ class EventsPortalComponent {
 
       $scope.PS= function(){
        $scope.event[0].problem_statement = $("#PS").val();
+
+        $http.put("/api/events/"+$scope.event[0]._id,$scope.event[0]).success(function(response){
+           
+           $http.get("/api/events/"+$stateParams.currentEvent).success(function(response){
+                $scope.event = response;
+            });
+        });       
+
+      };
+
+      $scope.FAQ= function(){
 
         $http.put("/api/events/"+$scope.event[0]._id,$scope.event[0]).success(function(response){
            
