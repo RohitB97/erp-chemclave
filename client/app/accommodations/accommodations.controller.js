@@ -12,7 +12,7 @@ class AccommodationsComponent {
       $("#dataTable").table2excel({
        exclude: ".noExl",
        name: "Worksheet Name",
-       filename: "ChemClave2017_accommodations"
+       filename: "ChemClave'17_accommodations"
       }); 
     };
 
