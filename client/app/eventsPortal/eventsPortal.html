@@ -82,17 +82,47 @@
             <h4 class="modal-title">{{event[0].name}}</h4>
           </div>
           <div class="modal-body">
-           <label>Description</label>
+          <ul class="nav nav-pills" role="tablist">
+           <li style="cursor: pointer;" role="presentation" class="active"><a data-target="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
+           <li style="cursor: pointer;" role="presentation"><a data-target="#registration" aria-controls="registration" role="tab" data-toggle="tab">Registration</a></li>
+           <li style="cursor: pointer;" role="presentation"><a data-target="#rules" aria-controls="rules" role="tab" data-toggle="tab">Rules</a></li>
+           <li style="cursor: pointer;" role="presentation"><a data-target="#prizemoney" aria-controls="prizemoney" role="tab" data-toggle="tab">Prize Money</a></li>
+           <li style="cursor: pointer;" role="presentation"><a data-target="#incentives" aria-controls="incentives" role="tab" data-toggle="tab">Incentives</a></li>
+           <li style="cursor: pointer;" role="presentation"><a data-target="#contacts" aria-controls="contacts" role="tab" data-toggle="tab">Contacts</a></li>
+          </ul><br>
+
+          <!-- Tab panes -->
+        <div class="tab-content">
+         <div role="tabpanel" class="tab-pane active" id="description">
            <textarea class="form-control" rows="5" id="info">{{event[0].event_info}}</textarea>
-           <hr>
-           <label>Rules</label>
-           <textarea class="form-control" rows="5" id="rules">{{event[0].rules}}</textarea>
-           <hr>
-           <label>Prize Money</label>
-           <textarea class="form-control" rows="3" id="PM">{{event[0].prizemoney}}</textarea>
-           <hr>
-           <label>Contacts</label>
-           <textarea class="form-control" rows="3" id="contacts">{{event[0].contacts}}</textarea>
+         </div>
+         <div role="tabpanel" class="tab-pane" id="registration">
+           <textarea class="form-control" rows="5" id="reg">{{event[0].registration_mode}}</textarea>
+         </div>
+         <div role="tabpanel" class="tab-pane" id="rules">
+           <input class="form-control" ng-model="event[0].rules[0]"><br>
+           <input class="form-control" ng-model="event[0].rules[1]"><br>
+           <input class="form-control" ng-model="event[0].rules[2]"><br>
+           <input class="form-control" ng-model="event[0].rules[3]"><br>
+         </div>
+         <div role="tabpanel" class="tab-pane" id="prizemoney">
+          <label>Eg: 1st winner - 10,000</label>
+           <input class="form-control" ng-model="event[0].prizemoney[0]"><br>
+           <input class="form-control" ng-model="event[0].prizemoney[1]"><br>
+           <input class="form-control" ng-model="event[0].prizemoney[2]"><br>
+         </div>
+         <div role="tabpanel" class="tab-pane" id="incentives">
+           <input class="form-control" ng-model="event[0].incentives[0]"><br>
+           <input class="form-control" ng-model="event[0].incentives[1]"><br>
+           <input class="form-control" ng-model="event[0].incentives[2]"><br>
+         </div>
+         <div role="tabpanel" class="tab-pane" id="contacts">
+          <label>Eg: xyz - 9999988822 - xyz@example.com</label>
+           <input class="form-control" ng-model="event[0].contacts[0]"><br>
+           <input class="form-control" ng-model="event[0].contacts[1]"><br>
+           <input class="form-control" ng-model="event[0].contacts[2]"><br>
+         </div>
+       </div>
           </div>
           <div class="modal-footer">
            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -153,7 +183,16 @@
            <div class="form-group">
             <label>Answer</label>
              <input type="text" class="form-control" ng-model="event[0].QA[2].answer">
-           </div>           
+           </div>
+
+           <div class="form-group">
+            <label>Question 4</label>
+             <input type="text" class="form-control" ng-model="event[0].QA[3].question">
+           </div>
+           <div class="form-group">
+            <label>Answer</label>
+             <input type="text" class="form-control" ng-model="event[0].QA[3].answer">
+           </div>            
           <div class="modal-footer">
            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
            <button ng-click="FAQ()" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>

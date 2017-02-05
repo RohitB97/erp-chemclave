@@ -24,7 +24,6 @@ angular.module('erpChemclaveApp', ['erpChemclaveApp.auth', 'erpChemclaveApp.admi
           'Open quiz',
           'Puzzle champ',
           'Chemieconnexion',
-          'CheQ',
           'Chem E Dart',
           'ChemAdmad',
           'Treasure hunt',

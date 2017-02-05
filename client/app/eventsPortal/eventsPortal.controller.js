@@ -37,9 +37,7 @@ class EventsPortalComponent {
 
       $scope.info= function(){
        $scope.event[0].event_info = $("#info").val();
-       $scope.event[0].prizemoney = $("#PM").val();
-       $scope.event[0].rules = $("#rules").val();
-       $scope.event[0].contacts = $("#contacts").val();
+       $scope.event[0].registration_mode = $("#reg").val();
 
         $http.put("/api/events/"+$scope.event[0]._id,$scope.event[0]).success(function(response){
            
