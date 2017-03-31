@@ -4,7 +4,7 @@
 
 class AccommodationsComponent {
   constructor($scope, $http) {
-    $http.get('http://www.chemclave.org/api/users/accommodations').success(function(response){
+    $http.get('http://www.chemclave.org/api/capusers/').success(function(response){
         $scope.accommodations = response;
     });
 

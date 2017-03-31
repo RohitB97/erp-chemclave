@@ -9,7 +9,7 @@ class FinancePortalComponent {
 
     $scope.user_list=[];
     $scope.acceptedList=[];
-    $scope.pendingList=[];
+    $scope.rejectedList=[];
 
     $http.get("http://www.chemclave.org/api/users/erp/finance").success(function(response){
        $scope.user_list = response;
