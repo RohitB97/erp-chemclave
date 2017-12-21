@@ -4,7 +4,7 @@
 // =================================
 var conf = JSON.parse(process.env.APP_CONFIG);
 
-var mongoPassword = 'y7uy7uy7u'; 
+// mongo password
 
 module.exports = {
   // Server IP
